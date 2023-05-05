@@ -51,8 +51,14 @@
     margin-bottom: 18px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 12px;
+    width: 280px;
+    padding: 10px 40px;
+    background-color: rgba(255, 255, 255, 0.527);
+    border: 1px solid rgba(0, 0, 0, 0.758);
+    border-radius: 3px;
+
 }
 .list-section ul li button{
     display: flex;
