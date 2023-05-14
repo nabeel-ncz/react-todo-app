@@ -1,0 +1,104 @@
+.container-1{
+    width: 150%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 0 12px -4px var(--main-font), -6px 0 12px -4px var(--main-font); 
+    z-index: 3;
+}
+.content{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.time-section{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.time-section h1{
+    font-size: 20px;
+}
+.time-section h2{
+    font-size: 16px;
+}
+.input-section{
+    width: 100%;
+    align-items: flex-start;
+}
+.input-section input[type="text"]{
+    width: 294px;
+    height: 38px;
+    padding: 0 30px;
+    background-color: transparent;
+    border: 2px solid var(--main-font);
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.input-section input[type="text"]::placeholder{
+    color: var(--main-font);
+}
+.input-section input[type="text"]:focus{
+    outline: none;
+    border:3px solid var(--glow-blue);
+}
+.task-section{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.task-section ul{
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.task-section ul::-webkit-scrollbar{
+    display: none;
+}
+.task-section ul li{
+    width: 330px;
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.075);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.task-section ul li .outer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+.task-section ul li .inner{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.task-section ul li .outer span{
+    font-size: 9px;
+    opacity: 60%;
+}
+.task-section ul li span{
+    font-size: 22px;
+    opacity: 100%;
+}
+
+.task-section ul li h4{
+    width: 100%;
+    font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 0 12px;
+}

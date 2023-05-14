@@ -1,0 +1,73 @@
+.container-2{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content-2{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: flex-start;
+}
+.head{
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 4px 4px -2px var(--main-font);
+}
+.head h4{
+    font-size: 20px;
+    margin-left: 16px;
+}
+.head button{
+    margin-right: 16px;
+    background-color: transparent;
+    border: 1px solid var(--danger);
+    border-radius: 5px;
+    padding: 4px 12px;
+    color: var(--danger);
+}
+.items{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.items ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+.items ul li{
+    width: 330px;
+    padding: 6px 12px;
+    background-color: var(--disable--bg);
+    color: var(--disable--font);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.items ul li h4{
+    font-size: 14px;
+    font-weight: 500;
+}
+.items ul li div span{
+    font-size: 9px;
+}
+.items ul li div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}

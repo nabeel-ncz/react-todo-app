@@ -1,72 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap');
 *{
     margin: 0;
     padding: 0;
 }
+:root{
+    --main--bg:rgb(12, 29, 40);
+    --main-font:rgb(74, 164, 225);
+    --glow-blue:rgb(54, 203, 240);
+    --disable--font:rgba(56, 121, 164, 0.701);
+    --disable--bg:rgba(255, 255, 255, 0.05);
+    --danger:rgb(201, 0, 0);
+}
 .todo-app{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
     min-height: 100vh;
-    background-color: gold;
-    padding: 140px 0 0 0;
-}
-.input-section{
-    display: flex;
-    flex-direction: column;
-    align-items: self-start;
-    gap: 8px;
-}
-.input-section h4{
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.input-section input[type="text"]{
-    width: 300px;
-    height: 38px;
-    padding: 0 30px;
-    background-color: rgba(255, 255, 255, 0.676);
-    border: 1px solid black;
-    border-radius: 3px;
-}
-.input-section button{
-    padding: 4px 10px;
-    width: 361px;
-    border: 1px solid black;
-    background-color: rgba(255, 255, 255, 0.546);
-    border-radius: 3px;
-}
-.list-section{
-    margin-top: 30px;
-}
-.list-section h6{
-    font-size: 16px;
-}
-.list-section ul{
-    margin-top: 20px;
-    list-style: none;
-}
-.list-section ul li{
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 280px;
-    padding: 10px 40px;
-    background-color: rgba(255, 255, 255, 0.527);
-    border: 1px solid rgba(0, 0, 0, 0.758);
-    border-radius: 3px;
-
-}
-.list-section ul li button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 8px;
-    font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.575);
-    border: none;
-    border-radius: 50%;
+    background-color: var(--main--bg);
+    color: var(--main-font);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
