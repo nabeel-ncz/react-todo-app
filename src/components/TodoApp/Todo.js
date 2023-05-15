@@ -6,13 +6,19 @@ import InCompleted from './incompleted/InCompleted';
 
 function Todo() {
     const [completed,setCompleted] = useState([])
-    const handleCallback = (childData) =>{
+    const [deleted,setDeleted] = useState([])
+
+    const handleCompleted = (childData) =>{
         setCompleted(childData)
     }
+    const handleDeleted = (childData) =>{
+        setDeleted(childData)
+    }
+
     return (
         <div className='todo-app'>
-            <InCompleted />
-            <Tasks childToParent = {handleCallback}/>
+            <InCompleted deletedData = {deleted}/>
+            <Tasks addCompleted = {handleCompleted} addDeleted={handleDeleted}/>
             <Completed data = {completed}/>
         </div>
     );

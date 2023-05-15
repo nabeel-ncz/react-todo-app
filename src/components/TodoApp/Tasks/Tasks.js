@@ -1,44 +1,31 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import moment from 'moment/moment';
 import './Tasks.css'
-function Tasks({ childToParent }) {
+function Tasks({ addCompleted,addDeleted }) {
 
     const [topDate, setTopDate] = useState(new Date())
-    const [currentDate, setCurrentDate] = useState("")
-
-    useEffect(() => {
-        let day = new Date().getDate();
-        let month = new Date().getMonth() + 1;
-        let year = new Date().getFullYear();
-        let hours = new Date().getHours();
-        let min = new Date().getMinutes();
-        let sec = new Date().getSeconds();
-        setCurrentDate(
-            day + '/' + month + '/' + year
-            + ' ' + hours + ':' + min + ':' + sec
-        );
-    }, []);
-
     const [item, setItem] = useState("");
     const [data, setData] = useState([])
-    const [completed,setCompleted] = useState([])
 
-    
+    const [completed,setCompleted] = useState([])
+    const [deleted,setDeleted] = useState([])
 
     const onHandleChange = (event) => {
         setItem(event.target.value)
     }
     const onHandleSubmit = (e) => {
         e.preventDefault()
-        setData([...data, { id: Date.now(), task: item, currentDate: currentDate, status: false }])
+        let newDate = moment().format('ddd MMM DD YYYY hh:mm:ss')
+        setData([...data, { id: Date.now(), task: item, currentDate: newDate, status: false }])
         setItem("")
     }
 
     const removeItem = (id) => {
-        data.map((obj, i) => {
+        data.filter((obj) => {
             if (obj.id === id) {
-                if (obj.status === false) {
-                    alert("are you want to delete without complete!")
-                }
+                alert("are you want to delete without complete!")
+                let newArr = [...deleted,{task:obj.task,added:obj.currentDate}]
+                handleDeletedItems(newArr)
             }
             return null;
         })
@@ -49,20 +36,24 @@ function Tasks({ childToParent }) {
         data.filter((obj) => {
             if (obj.id === id) {
                 obj.status = e.target.checked
+                let newDate = moment().format('ddd MMM DD YYYY hh:mm:ss')
+                let newArr = [...completed,{task:obj.task,added:obj.currentDate,completed:newDate}]
+                handleCompletedItems(newArr)
             }
             return obj;
         })
-        data.filter((obj)=>{
-            if(obj.status === true){
-                setCompleted([...completed,{task:obj.task,added:obj.currentDate,completed:currentDate}])
-            }
-            return null;
-        })
-        childToParent(completed)
         const dup = data.filter((obj) => obj.status !== true)
         setData(dup)
     }
 
+    const handleCompletedItems = (newArr)=>{
+        setCompleted(newArr)
+        addCompleted(newArr)
+    }
+    const handleDeletedItems = (newArr)=>{
+        setDeleted(newArr)
+        addDeleted(newArr);
+    }
     return (
         <div className="container-1">
             <div className="content">
